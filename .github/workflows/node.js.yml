@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Use Node.js 18x
+    - name: Use Node.js 16x
       uses: actions/setup-node@v2
       with:
-        node-version: '18x'
+        node-version: '16x'
       
     - name: 🔨 Build Project
       run: |
