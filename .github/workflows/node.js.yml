@@ -28,5 +28,5 @@ jobs:
         username: ${{ secrets.GIT_CPANEL_REACT_USER }}
         password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
         protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
-        local-dir: ./  # This ensures everything in your project directory gets uploaded
+        local-dir: ./ 
         
