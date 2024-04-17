@@ -28,6 +28,7 @@ jobs:
         username: ${{ secrets.GIT_CPANEL_REACT_USER }}
         password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
         protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
+        port: ${{ secrets.GIT_CPANEL_REACT_PORT}}
         local-dir: ./
         server-dir: ./ 
         
