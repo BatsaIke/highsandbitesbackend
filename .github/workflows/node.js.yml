@@ -1,4 +1,4 @@
-name: 🚀 Deploy Node.js application to cPanel on push
+name: 🚀 Deploy Node.js Application to cPanel on push
 
 on: 
   push:
@@ -10,17 +10,17 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
+    - name: 🚚 Checkout code
+      uses: actions/checkout@v3
 
     - name: Use Node.js 16
       uses: actions/setup-node@v2
       with:
         node-version: '16'
       
-    - name: 🔨 Build Project
-      run: |
-        npm install
-        npm run build
-    
+    - name: 📦 Install Dependencies
+      run: npm install
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
@@ -28,4 +28,5 @@ jobs:
         username: ${{ secrets.GIT_CPANEL_REACT_USER }}
         password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
         protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
-        local-dir: ./build/
+        local-dir: ./  # This ensures everything in your project directory gets uploaded
+        remote-dir: /path/to/your/app/  # Adjust this to the correct path on your cPanel
